@@ -1,0 +1,41 @@
+/* Barre de navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    background-color: #f5e6cc;
+    padding: 18px 20px;
+
+    border-bottom: 3px solid #c8955d;
+    box-shadow: 0 3px 8px rgba(70, 40, 20, 0.12);
+
+    font-family: Arial, sans-serif;
+}
+
+/* Boutons de navigation */
+nav a {
+    text-decoration: none;
+    color: #5c3520;
+    background-color: #fffaf2;
+
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid #d8b58a;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol */
+nav a:hover {
+    background-color: #8b5e3c;
+    color: #ffffff;
+    border-color: #8b5e3c;
+
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(70, 40, 20, 0.2);
+}

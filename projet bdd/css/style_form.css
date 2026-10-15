@@ -1,0 +1,194 @@
+/* ========================================
+   1. VARIABLES ET RESET
+======================================== */
+:root {
+    --primary: #8b5e3c;
+    --primary-hover: #70472c;
+    --background: #f7f5f0;
+    --surface: #ffffff;
+    --text: #29251f;
+    --muted: #81786d;
+    --border: #e7e0d7;
+    --focus: rgba(139, 94, 60, 0.14);
+    --radius: 12px;
+    --shadow: 0 15px 45px rgba(55, 42, 28, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   2. PAGE
+======================================== */
+body {
+    min-height: 100vh;
+    padding: 50px 20px;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(226, 207, 181, 0.2),
+            transparent 35%
+        ),
+        var(--background);
+    color: var(--text);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+main {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   3. CARTE DU FORMULAIRE
+======================================== */
+form {
+    width: 100%;
+    padding: 38px;
+    background: var(--surface);
+    border: 1px solid rgba(231, 224, 215, 0.9);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* ========================================
+   4. TITRE
+======================================== */
+h1 {
+    margin-bottom: 32px;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 14px;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* ========================================
+   5. GROUPES DE CHAMPS
+======================================== */
+form p {
+    margin-bottom: 23px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #494239;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+/* ========================================
+   6. CHAMPS ET LISTE DEROULANTE
+======================================== */
+input:not([type="submit"]),
+select {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: #fdfcfb;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+input:not([type="submit"]):hover,
+select:hover {
+    border-color: #c9b8a5;
+}
+
+input:not([type="submit"]):focus,
+select:focus {
+    border-color: var(--primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px var(--focus);
+}
+
+input::placeholder {
+    color: #aaa197;
+}
+
+select {
+    cursor: pointer;
+}
+
+/* Apparence des champs numériques */
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ========================================
+   7. BOUTON D'AJOUT
+======================================== */
+form p:last-child {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+input[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(139, 94, 60, 0.15);
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 7px 18px rgba(112, 71, 44, 0.2);
+    transform: translateY(-1px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+input[type="submit"]:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}

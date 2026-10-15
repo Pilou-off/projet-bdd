@@ -1,0 +1,135 @@
+/* ==============================
+   DESIGN - BOULANGERIE ARTISANALE
+   ============================== */
+
+:root {
+    --cream: #faf6ef;
+    --white: #ffffff;
+    --brown: #4a2e20;
+    --brown-light: #78543b;
+    --gold: #c69b55;
+    --green: #397653;
+    --red: #b74438;
+    --text: #33271f;
+    --shadow: 0 15px 45px rgba(74, 46, 32, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            #f0dfc4 0,
+            transparent 40%
+        ),
+        var(--cream);
+
+    color: var(--text);
+}
+
+/* Conteneur principal */
+
+main {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    padding: 55px 45px;
+
+    text-align: center;
+    background: var(--white);
+    border: 1px solid rgba(198, 155, 85, 0.35);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+
+    animation: apparition 0.6s ease-out;
+}
+
+/* Bande décorative supérieure */
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
+
+    background: linear-gradient(
+        90deg,
+        var(--brown),
+        var(--gold),
+        var(--brown)
+    );
+}
+
+/* Titre principal */
+
+main h1 {
+    margin: 0 0 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 5vw, 36px);
+    line-height: 1.35;
+
+    color: var(--brown);
+}
+
+/* Message de confirmation */
+
+main p {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--brown-light);
+}
+
+/* Message de réussite */
+
+main h1:has(+ p) {
+    color: var(--green);
+}
+
+/* Animation d'apparition */
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adaptation aux téléphones */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    main {
+        padding: 45px 22px;
+        border-radius: 16px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+}
